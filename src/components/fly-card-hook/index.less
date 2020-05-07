@@ -1,0 +1,46 @@
+.fly-sector {
+  position: relative;
+  width: 140px;
+  .fly-card {
+    position: absolute;
+    background-color: @menuBgColor;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px @commonWhiteColor inset;
+    border: 2px solid @menuBgColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    height: 200px;
+    width: 140px;
+    transition: 0.5s;
+    transform-origin: 20px 180px;
+  }
+  &::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    top: 173px;
+    left: 12px;
+    box-shadow: 0 0 2px 1px #a0a0a0 inset;
+  }
+  &:hover .fly-card {
+    box-shadow: 0 0 5px 2px @commonWhiteColor inset;
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes CardRotate {
+  form {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}

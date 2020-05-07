@@ -1,0 +1,68 @@
+body {
+  background: @color;
+}
+
+
+.fly-introduce {
+  animation: bgColorAnimatedIntroduceUp 1s;
+  background-color: @originalBgcolor;
+}
+
+.fly-main {
+  animation: bgColorAnimatedIndexUp 1s;
+  background-color: @mainBgColor;
+}
+
+.fly-header-index {
+  // animation: headerBgColor 1s;
+  background-color: @mainBgColor;
+}
+
+.fly-header-main {
+  // animation: headerBgColor 1s reverse;
+  background-color: @originalBgcolor;
+}
+/** 动画专区 */
+// 主页向上渐变
+@keyframes bgColorAnimatedIndexUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100vh, 0);
+    transform: translate3d(0, 100vh, 0);
+    background-color: @originalBgcolor;
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: @mainBgColor;
+  }
+}
+
+// 介绍页向上渐变
+@keyframes bgColorAnimatedIntroduceUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100vh, 0);
+    transform: translate3d(0, 100vh, 0);
+    background-color: @mainBgColor;
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: @originalBgcolor;
+  }
+}
+
+// header颜色变化动画
+@keyframes headerBgColor {
+  from {
+    background-color: @originalBgcolor;
+  }
+  to {
+    background-color: @mainBgColor;
+  }
+}
